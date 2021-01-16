@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+
+\tolerance=1
+
+\hyphenpenalty=1
+\hbadness=1
+
+\title{Assignments Template}
+\author{Yannuo Wen} 
+\date{05 April 2020} 
+
+\rmfamily
+
+\usepackage[colorlinks,
+            linkcolor=red,
+            anchorcolor=blue,
+            citecolor=green
+            ]{hyperref}
+\usepackage{appendix}
+\usepackage{listings}
+\lstset{
+ columns=fixed,       
+ numbers=left,                                        % 在左侧显示行号
+ numberstyle=\tiny\color[RGB]{192,192,192},                       % 设定行号格式
+ frame=none,                                          % 不显示背景边框
+ backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+ keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+ numberstyle=\footnotesize\color[RGB]{160,160,160},           
+ commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+ stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+ showstringspaces=false,                              % 不显示字符串中的空格
+}
+\usepackage{ulem}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{array,color}
+\usepackage{colortbl}
+\definecolor{mygray}{RGB}{220,220,220}
+\usepackage{wrapfig}
+\usepackage{geometry}
+
+\geometry{left = 2cm, right = 2cm, top = 2.5cm, bottom = 2.5cm}
+
+\begin{document} 
+
+
+
+\begin{wrapfigure}{l}{0.3\textwidth}
+\vspace{-16pt}
+\centering
+
+\includegraphics[width=0.28\textwidth]{BDIC.jpeg}
+
+\vspace{-10pt}
+\end{wrapfigure}
+
+\begin{spacing}{1.2}
+\noindent
+\huge
+Beijing-Dublin International College\\
+\LARGE
+Lecture ID: 	Lecture name\\ %写学科代码和全称
+\Large
+Lecturer:\ \ \ \ \ \ Lecturer name\\ %写讲师姓名(自行调整空格将导师姓名和课程名称对齐，或不对齐)
+\end{spacing} 
+
+\vspace{-30pt}
+
+\begin{center}
+\huge
+Assignment \#: name of assignment%写作业名称
+\end{center}
+
+\vspace{-10pt}
+
+%个人信息和承诺(表格)
+\renewcommand\arraystretch{2} %双倍间距
+\begin{table}[h]
+\rule{-5pt}{0pt}
+\scalebox{1}{
+\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+
+\hline
+	\textbf{\ Name:} & \textbf{\ UCD ID:} \\ %写姓名和ID
+\hline
+\rowcolor{mygray}
+	\multicolumn{2}{|l|}{
+	\begin{tabular}{p{0.94\textwidth}}
+
+	\textbf{Honesty Pledge:} \\
+	
+	I clearly understand the Academic Rules of Beijing University of Technology and University College Dublin, and I am aware of the punishment for violating the Rules of Beijing University of Technology and University College Dublin. I hereby promise to abide by the relevant rules and promise the originality of my work. If found violating the rules, I would accept the punishment thereof.\\ 
+	
+	\textbf{Date:} DD/MM/2020\\ %写当前日期
+
+\end{tabular}} \\ 
+\hline
+
+\end{tabular}}
+
+\end{table}
+
+
+
+%目录自动生成
+\tableofcontents
+
+\section{Introduction}
+%简介内容
+
+	Introduction goes here
+
+\section{Section 1}
+%第一部分内容
+
+	First part goes here \\
+	This is equation in text: $x ^ 2 + y ^ 2 = 0$ \\ %行间公式
+	This is equation between lines,
+	$$\int _ {0} ^ {\infty} x ^ 2 + \ln x dx$$ %简易段间公式，易出bug不建议用
+	\\
+	If you need more complex equation,
+	\begin{equation}%带标号段间或复杂公式，建议用
+	\mathrm{X} \left( \omega \right) = \mathcal{F} \{ x \left( t \right) \} = \sum_{n = 0}^{\infty} c_k e^{2\pi n j \omega} 
+    \end{equation}
+
+\section{Section 2}
+%第二部分内容
+
+	Second part goes here. \\
+	%引用模板，详见reference.bib文件。非哈佛格式
+	Referrence template: cite a journal \cite{cooley1965algorithm}, and a book \cite{proakis2001digital}\\
+    Figure template
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.3]{BDIC.jpeg}%图片放入.tex同一文件夹，修改名称和缩放
+    \caption{these are our beloved universities}
+    \label{fig:label}
+    \end{figure}
+
+\section{Summary}
+%总结内容
+
+	Summary Goes here
+
+\clearpage
+\begin{center}
+\bibliographystyle{plain}
+\bibliography{./references/reference}
+\end{center}
+
+\begin{appendices} %附录区，放代码、推导过程
+    
+    \clearpage
+    \begin{center}
+	\section{First appendix}
+    \end{center}
+
+    Python code:
+    \lstset{language=Python} %在这里制定代码语言并插入代码
+    \begin{lstlisting}
+g = lambda x : x**2
+print g(4)
+
+def f(x):
+    return x**2
+    print f(4)
+
+print f(g(4))
+    \end{lstlisting}
+    ~\\
+
+Java code:
+    \lstset{language=Java} %在这里制定代码语言并插入代码
+    \begin{lstlisting}
+public class MainPanel {
+    private GamingControl g;
+    private static JFrame create=new JFrame("SpaceGame");
+    public MainPanel() throws IOException {
+        g=new GamingControl();
+    }
+}
+    \end{lstlisting}
+
+    \clearpage
+    \begin{center}
+	\section{Second appendix}
+    \end{center}
+
+        	         	
+
+        	
+%\textbf{\textcolor[rgb]{0.98,0.00,0.00}{}}
+%        	
+%\lstinputlisting[language=python]{文件目录}
+        	
+        	
+
+\end{appendices}
+
+\end{document}

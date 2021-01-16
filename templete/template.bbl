@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{cooley1965algorithm}
+James~W Cooley and John~W Tukey.
+\newblock An algorithm for the machine calculation of complex fourier series.
+\newblock {\em Mathematics of computation}, 19(90):297--301, 1965.
+
+\bibitem{proakis2001digital}
+John~G Proakis.
+\newblock {\em Digital signal processing: principles algorithms and
+  applications}.
+\newblock Pearson Education India, 2001.
+
+\end{thebibliography}
